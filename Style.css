@@ -1,0 +1,180 @@
+/* --- Global Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    line-height: 1.6; 
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+
+/* --- Navigation --- */
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 20px 10%; 
+    background: #1f1f1f; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+}
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: #e0e0e0; text-decoration: none; font-weight: bold; }
+
+/* --- Sections --- */
+section { 
+    padding: 80px 10%; 
+    min-height: auto; 
+    padding-bottom: 50px; 
+}
+h2 { color: #3498db; margin-bottom: 30px; font-size: 2rem; }
+
+/* --- Profile Section --- */
+#profile {
+    background: linear-gradient(135deg, #171717 0%, #242424 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    background: #1f1f1f;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+.profile-container:hover { transform: translateY(-5px); }
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff; 
+    outline: 6px solid #3498db; 
+    box-shadow: 0 5px 15px rgb(255, 255, 255);
+    transition: 0.5s ease;
+}
+.profile-pic:hover {
+    transform: rotate(5deg) scale(1.05);
+    outline-color: #f3f5f6;
+}
+.profile-text h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; }
+
+/* --- Skills Section --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.skill-card {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: 0.3s ease;
+    text-align: center;
+}
+.skill-card:hover {
+    border-color: #3498db;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
+}
+.skill-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --- Projects Section --- */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.card { 
+    background: #1e1e1e; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 1px solid #333; 
+    width: 450px;
+    transition: 0.3s; 
+}
+.card:hover { border-color: #3498db; transform: translateY(-5px); }
+.card h3 { color: #ffffff; margin-bottom: 15px; }
+.card p { color: #b0b0b0; margin-bottom: 20px; font-size: 0.95rem; }
+.tags span {
+    display: inline-block;
+    background: #3a3a3a;
+    color: #e8eef5;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+
+/* --- Education and Contact Sections --- */
+#education, #contact {
+    padding: 80px 10%;
+    width: 100%;
+    text-align: left;
+}
+
+/* Gray Line na sagad hanggang dulo */
+.section-divider {
+    border: 0;
+    border-top: 1px solid #333;
+    width: 100%;
+    margin: 40px 0; /* Ito ang nagbibigay ng space para hindi dumikit sa box */
+}
+
+/* Pag-center ng mga box */
+#education .card, 
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; 
+    border-left: 0px; 
+}
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #1f1f1f;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    transition: 0.3s;
+    width: 320px;
+    justify-content: center;
+}
+.contact-card:hover {
+    border-color: #3498db;
+    transform: scale(1.05);
+    color: #ffffff;
+}
+.contact-card i { font-size: 1.5rem; color: #3498db; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    nav ul { display: none; }
+    .profile-container { flex-direction: column; text-align: center; }
+    .card, .contact-card { width: 100%; }
+}
